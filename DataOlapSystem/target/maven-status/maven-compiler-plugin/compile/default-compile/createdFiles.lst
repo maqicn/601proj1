@@ -1,2 +1,2 @@
-application/Application.class
+service/OlapService.class
 controller/HelloController.class
