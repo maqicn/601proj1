@@ -20,6 +20,19 @@ public class OlapService {
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
+	
+	/**
+	 * Template 1, INITIALIZE OPTIONS
+	 */
+	public List<Map<String, Object>> getAllDiseaseType(){
+		return this.jdbcTemplate.queryForList(SQL.SQL_ALL_DIS_TYPE);
+	}
+	public List<Map<String, Object>> getAllDiseaseDesc(){
+		return this.jdbcTemplate.queryForList(SQL.SQL_ALL_DIS_DESC);
+	}
+	public List<Map<String, Object>> getAllDiseaseName(){
+		return this.jdbcTemplate.queryForList(SQL.SQL_ALL_DIS_NAME);
+	}
 
 	/**
 	 * TEMPLATE 1

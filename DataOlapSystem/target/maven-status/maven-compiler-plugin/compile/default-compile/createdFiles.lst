@@ -2,3 +2,4 @@ service/OlapService.class
 util/SpringUtil.class
 controller/HelloController.class
 constant/SQL.class
+util/MathUtil.class

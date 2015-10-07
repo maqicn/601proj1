@@ -3,6 +3,7 @@ package constant;
 public class SQL {
 
 	public static final String SCHEMA = new String("qwang39.");
+	
 	public static final String SQL_DISEASE_DESP = new String("select count(1) from patient p, disease d, clinical_fact c " +
 			"where p.p_id = c.p_id and d.ds_id=c.ds_id and d.description = ?");
 	
@@ -18,4 +19,10 @@ public class SQL {
 	public static final String SQL_RNA_EXPRESSION = new String("");
 	
 	public static final String SQL_DISEASE_EXPRESSION = new String("");
+	
+	public static final String SQL_ALL_DIS_TYPE = new String("select distinct type from disease");
+	
+	public static final String SQL_ALL_DIS_DESC = new String("select distinct description from disease");
+	
+	public static final String SQL_ALL_DIS_NAME = new String("select distinct name from disease");
 }

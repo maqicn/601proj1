@@ -1,16 +1,38 @@
+<!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 
-<form>
-	<button>yeah~</button>
-</form>
+<jsp:include page="/WEB-INF/jsp/head.jsp" />
 
-</body>
-</html>
+<div class="container">
+	<form>
+		<div class="form-inline">
+		<h2>Patient Numbers:</h2>
+			<label for="inputDiseaseDescription">Categoried By Disease Description</label>
+			<select class="form-control disDescOptions">
+				<option>1</option>
+				<option>2</option>
+				<option>tumor</option>
+				<option>4</option>
+				<option>5</option>
+			</select>
+		</div>
+		<div class="form-inline">
+			<label for="result">Number of Patients:</label>
+			<label class="resultDiseaseDescription"></label>
+		</div>
+		<button type="button" class="btn btn-default" onclick="getCntByDiseaseDesp()">Query</button>
+	</form>
+</div>
+
+<script type="text/javascript">
+function getCntByDiseaseDesp(){
+	$.ajax({
+	  url: "/DataOlapSystem/getCntByDiseaseDesp.do",
+	  data: {disDesc:$('.disDescOptions option:selected').val()}
+	}).done(function( data ) {
+	    $('.resultDiseaseDescription').html(data);
+	});
+}
+</script>
